@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Participant extends Model
+class Participant extends Authenticatable
 {
-    use HasFactory;
+    use Notifiable;  // для отправки уведомлений
 
     // Указываем, какие поля доступны для массового присваивания
-    protected $fillable = ['full_name', 'birth_date', 'gender', 'medical_approval'];
+    protected $fillable = ['full_name', 'birth_date', 'gender', 'medical_approval', 'email', 'password'];
 }
+

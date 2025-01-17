@@ -8,10 +8,10 @@ class ParticipantController extends Controller
 {
     public function index()
     {
-        // Получаем все участники
-        $participants = Participant::all(); // Здесь ты получаешь данные из базы
+        // Получаем всех участников
+        $participants = Participant::all(); 
 
-        // Передаем переменную participants в представление
+        // Передаем участников в представление welcome
         return view('welcome', compact('participants'));
     }
 }

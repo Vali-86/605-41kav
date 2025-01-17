@@ -14,6 +14,8 @@ class CreateParticipantsTable extends Migration
             $table->date('birth_date');
             $table->string('gender', 10);
             $table->boolean('medical_approval');
+            $table->string('email')->unique(); // Email должен быть уникальным
+            $table->string('password'); // Для хранения хэша пароля
             $table->timestamps();
         });
     }

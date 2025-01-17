@@ -16,6 +16,11 @@
             <h1 class="display-4">ГТО - Участники и их результаты</h1>
             <p class="lead">Здесь отображаются данные участников, их результаты и достижения.</p>
         </div>
+        <div class="d-flex justify-content-center">
+            <a href="{{ route('disciplines') }}" class="text-white mx-3">Список дисциплин</a>
+            <a href="/page3" class="text-white mx-3">Регистрация</a>
+            <a href="{{ route('login') }}" class="text-white mx-3">Вход</a>
+        </div>
     </header>
 
     <!-- Основной контент -->
