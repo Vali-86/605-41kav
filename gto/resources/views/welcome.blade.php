@@ -18,8 +18,14 @@
         </div>
         <div class="d-flex justify-content-center">
             <a href="{{ route('disciplines') }}" class="text-white mx-3">Список дисциплин</a>
-            <a href="/page3" class="text-white mx-3">Регистрация</a>
+            <a href="{{ route('register') }}" class="text-white mx-3">Регистрация</a>
             <a href="{{ route('login') }}" class="text-white mx-3">Вход</a>
+            <!-- Проверка авторизации -->
+            <!-- @auth
+                <div>Юзер: {{ Auth::user()->full_name }}</div>
+            @else -->
+                <!-- <div><a style="color: white;" href="{{ route('login') }}">Войдите</a></div> -->
+            @endauth
         </div>
     </header>
 

@@ -44,4 +44,28 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('/'); // Перенаправляем на главную страницу
     }
+
+    // Отображение формы регистрации
+    public function showRegisterForm()
+    {
+        return view('register'); // Ваша форма регистрации
+    }
+
+    // Обработка регистрации
+    public function register(Request $request)
+    {
+
+        // Создаем нового пользователя
+        $participant = new Participant();
+        $participant->full_name = $request->full_name;
+        $participant->email = $request->email;
+        $participant->password = Hash::make($request->password); // Хешируем пароль
+        $participant->save();
+
+        // Авторизация пользователя
+        Auth::login($participant);
+
+        // Перенаправление после успешной регистрации и авторизации
+        return redirect()->route('welcome')->with('status', 'Вы успешно зарегистрированы и авторизованы!');
+    }
 }
