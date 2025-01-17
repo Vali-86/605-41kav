@@ -4,25 +4,22 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker;
 
 class AwardsSeeder extends Seeder
 {
     public function run()
     {
-        $faker = Faker::create();
-
-        // Создадим 3 награды
+        // Создаем несколько наград с русскими названиями
         DB::table('awards')->insert([
-            'name' => 'Gold',
+            'name' => 'Золотой',
             'min_score' => 90,
         ]);
         DB::table('awards')->insert([
-            'name' => 'Silver',
+            'name' => 'Серебряный',
             'min_score' => 75,
         ]);
         DB::table('awards')->insert([
-            'name' => 'Bronze',
+            'name' => 'Бронзовый',
             'min_score' => 60,
         ]);
     }
